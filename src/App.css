@@ -1,38 +1,184 @@
+:root {
+  /* Colors */
+--primBlue-100:  #00ABFF;
+--primBlue-200:  #009AE5;
+--primBlue-300:  #0089CC;
+--primBlue-400:  #0078B2;
+--primBlue-500:  #006799; 
+--primBlue-600:  #005580;
+--primBlue-700:  #004466;
+--primBlue-800:  #00334D;
+--primBlue-900:  #002233;
+--primBlue-1000: #00111A;
+
+--primGreen-100:  #00FF92;
+--primGreen-200:  #00E583;
+--primGreen-300:  #00CC74;
+--primGreen-400:  #00B265;
+--primGreen-500:  #009957;
+--primGreen-600:  #008049;
+--primGreen-700:  #00663A;
+--primGreen-800:  #004D2C;
+--primGreen-900:  #00331E;
+--primGreen-1000: #001A0F;
+
+--accShade-100:  #E6E6E6;
+--accShade-200:  #CCCCCC;
+--accShade-300:  #B3B3B3;
+--accShade-400:  #999999;
+--accShade-500:  #808080;
+--accShade-600:  #666666;
+--accShade-700:  #4C4C4C;
+--accShade-800:  #333333;
+--accShade-900:  #191919;
+
+--neuDark-100: #0A0A0A;
+--neuDark-75: #1A1A1A;
+--neuDark-50: #262626;
+--neuDark-25: #333333;
+
+--neuWhite-100: #FEFEFE;
+--neuWhite-75: #F2F2F2;
+--neuWhite-50: #E6E6E6;
+--neuWhite-25: #D9D9D9;
+
+--focusBlue-100: #057bff;
+--focusBlue-75: #0469d9;
+--focusBlue-50: #0356b2;
+--focusBlue-25: #02438c;
+
+--warnOrange-100: #402000;
+--warnOrange-75: #804100;
+--warnOrange-50: #BF6100;
+--warnOrange-25: #FF8200;
+
+--errRed-100: #8C1C1F;
+--errRed-75: #B32427;
+--errRed-50: #D92B30;
+--errRed-25: #FF3338;
+
+--succGreen-100: #097400;
+--succGreen-75: #0C9900;
+--succGreen-50: #10BF00;
+--succGreen-25: #13E500;
+
+--radius-20: 20px;
+
+--boxShadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+*, *::before, *::after{
+padding: 0;
+border: none;
+box-sizing: border-box;
+}
+
+html {
+-webkit-text-size-adjust: none; /* for iOS Safari */
+text-size-adjust: none;/* for other mobile browser */
+}
+
+body {
+font-size: 100%;
+background-color: var(--neuDark-75);
+
+}
+
+h1, h2, h3, h4, h5, h6, p {
+margin: 0;
+}
+
+img, svg {
+display: block;
+max-width: 100%;    
+}
+
+
+menu:not(article menu),
+ol:not(article ol),
+ul:not(article ul) {
+list-style: none;
+}
+
+menu, ol, ul {
+padding-left: 0;
+}
+
+:focus:not(:focus-visible) {
+outline:none
+}
+
+@font-face {
+font-family: 'Givonic-Black';
+src:    url(./assets/fonts/givonic/Givonic-Black.ttf) format('truetype'),
+      url(./assets/fonts/givonic/Givonic-Black.otf) format('opentype');
+font-weight: 900;
+font-style: normal;
+}
+@font-face {
+font-family: 'Givonic-Bold';
+src:    url(./assets/fonts/givonic/Givonic-Bold.ttf) format('truetype'),
+      url(./assets/fonts/givonic/Givonic-Bold.otf) format('opentype');
+font-weight: 700;
+font-style: normal;
+}
+@font-face {
+font-family: 'Givonic-Sembold';
+src:    url(./assets/fonts/givonic/Givonic-SemiBold.ttf) format('truetype'),
+      url(./assets/fonts/givonic/Givonic-SemiBold.otf) format('opentype');
+font-weight: 600;
+font-style: normal;
+}
+@font-face {
+font-family: 'Givonic-Regular';
+src:    url(./assets/fonts/givonic/Givonic-Regular.ttf) format('truetype'),
+      url(./assets/fonts/givonic/Givonic-Regular.otf) format('opentype');
+font-weight: 450;
+font-style: normal;
+}
+@font-face {
+font-family: 'Givonic-Light';
+src:    url(./assets/fonts/givonic/Givonic-Light.ttf) format('truetype'),
+      url(./assets/fonts/givonic/Givonic-Light.otf) format('opentype');
+font-weight: 300;
+font-style: normal;
+}
+@font-face {
+font-family: 'Givonic-Thin';
+src:    url(./assets/fonts/givonic/Givonic-Thin.ttf) format('truetype'),
+      url(./assets/fonts/givonic/Givonic-Thin.otf) format('opentype');
+font-weight: 100;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'Inter-Medium';
+src:    url(./assets/fonts/inter/Inter-Medium.ttf) format('truetype');
+font-weight: 500;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'Inter-Regular';
+src:    url(./assets/fonts/inter/Inter-Regular.ttf) format('truetype');
+font-weight: 400;
+font-style: normal;
+}
+
+body {
+  background-color: var(--neuDark-100);
+}
+
+h1 {
+  font-family: 'Givonic Black', sans-serif;
+  font-size: 42px;
+  color: var(--accShade-200);
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  width: 500px;
+  height: 300px;
+  margin: 42px auto;
+  border-radius: 8px;
+  background-color: var(--accShade-900);
 }
