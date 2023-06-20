@@ -3,8 +3,10 @@ import './Clocks.css';
 
 function StartButton( props ) {
     // button with start
+    return (
+        <button className="primary" onClick={ props.function }>  Start </button> 
+)
 
-    return <button className="primary" onClick={ props.function }>  Start </button>
 }
 
 function PauseButton(props) {
@@ -31,7 +33,10 @@ const ResetClock = () => {
     alert('Reset')
 }
 
-
+function Test () {
+    const [test, setTest] = useState(false)
+    return null
+}
 
 function Clock() {
     
@@ -43,8 +48,23 @@ function Clock() {
 
     
 
-    function Add() {
-        setInterval(setHours( hours + 1 ), 100)
+    function add() {
+        setInterval(setHours( prevHours => prevHours + 1 ), 100)
+    }
+    function add_1() {
+        let i
+        for (i=0; i < 5; i++) {
+            setHours(prevHours => prevHours + 1)
+        }
+        setInterval(console.log('Hi'), 1000)
+    }
+
+    function deduct() {
+        setHours( prevHours => prevHours - 1 )
+    }
+
+    function reset() {
+        setHours(0)
     }
 
     return (
@@ -52,14 +72,13 @@ function Clock() {
             <h1> React {hours} JS Stopwatch </h1>
             { window.hours = hours }
             <p> {hours} : {minutes} : {seconds} : {milliseconds}</p>
-             <StartButton function={Add} /> 
-              <PauseButton function={PauseClock} />
-            <ResetButton function={ResetClock} />
+             <StartButton function={add_1} /> 
+              <PauseButton function={deduct} />
+            <ResetButton function={reset} />
         </div>
 
     )
 }
 
-console.log(window.hours)
 
 export {Clock}
